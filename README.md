@@ -1,30 +1,36 @@
-# EMF Aware + EMC Studio
+# EMF Buddies (Awareness folder)
 
-Dual-mode web app: **Awareness mode** (habit dashboard, distance visualizer, sleep/habit tracker, standards explorer) and **Technical EMC mode** (RF field solver, shielding engine, unit matrix, CISPR 32 / FCC 15 limits check).
-Plain HTML, CSS and JavaScript: no build step, no dependencies.
+Playful web app with original mascots (Zappy and Wavey). Plain HTML, CSS and JavaScript, no build step.
 
-## Files
 | File | Purpose |
 |---|---|
-| `index.html` | Page shell, header mode toggle, bottom navigation |
-| `style.css` | Theme tokens (light/dark, Awareness teal, Technical blue) and layout |
-| `app.js` | Physics formulas, all screens, navigation, saved history |
+| `index.html` | Page shell, header, bottom navigation |
+| `style.css` | Light/dark theme tokens and playful layout |
+| `app.js` | Home, Settings, Room Scanner, Distance Fun, Habit Tracker, Facts, mascots |
 
 ## Run in VS Code
-Open the folder, install the **Live Server** extension, right-click `index.html` and choose *Open with Live Server*.
-Or from a terminal: `python -m http.server 8000` and visit http://localhost:8000
+1. File > Open Folder > `emf-buddies`
+2. Install the **Live Server** extension
+3. Right-click `index.html` > *Open with Live Server*
+
+(No extension? Run `python -m http.server 8000` and open http://localhost:8000)
 
 ## Push to GitHub and host free
 ```bash
 git init
 git add .
-git commit -m "EMF Aware + EMC Studio"
+git commit -m "EMF Buddies awareness app"
 git branch -M main
-git remote add origin https://github.com/<your-username>/emc-studio.git
+git remote add origin https://github.com/<your-username>/emf-buddies.git
 git push -u origin main
 ```
-Then: repository *Settings > Pages > Deploy from branch > main / root*.
+Then: repo Settings > Pages > Deploy from branch > main / root.
+
+## Technical space (hidden)
+Off by default. Turn on in the top-bar ⚙️ Settings > "Show the Technical space" to reveal a Technical button (placeholder for now).
+
+## Next: build it
+Add a `technical/` section (RF solver, shielding, units, limits). Formulas are already in the earlier `emc-studio/app.js` and `emc-calculator/emc_calc.py`.
 
 ## Notes
-Estimates for learning and pre-compliance screening, not a substitute for accredited lab measurement.
-Limit tables: ICNIRP 10 MHz to 300 GHz, CISPR 32 and FCC 15 from 30 MHz to 1 GHz.
+Estimates for education only. Room Scanner assumes every device transmits at full power at once (worst case) and compares against ICNIRP public reference levels. It is not a medical assessment.
